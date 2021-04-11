@@ -1,19 +1,12 @@
-export class ContaCorrente {
-    agencia; 
-    _saldo = 0;
+import { conta } from "./Conta.js";
 
-    sacar(valor){
-        if(this._saldo >= valor){
-            this._saldo -= valor;
-            return valor;
-        }
+export class ContaCorrente extends conta{
+    static numeroDeContas = 0;
+
+    constructor(cliente, agencia){
+        super(0, cliente, agencia);
+        ContaCorrente.numeroDeContas += 1; // número de contas toda vez que criar uma conta adicionar 1.
     }
 
-    depositar (valor){
-        if(valor <= 0)
-        {
-           return
-        }
-        this._saldo += valor;
-    }
+   
 }

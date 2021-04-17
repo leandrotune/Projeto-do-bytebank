@@ -1,12 +1,17 @@
 /*class são atributos: nesse caso atributos dos clientes ou propriedades */
 export class cliente {
-    constructor(nome, cpf){
+     get cpf(){//acessor: somente saber o valor do cpf: seu número de cpf
+        return this._cpf;
+    }
+    
+    constructor(nome, cpf, senha){
         this.nome = nome;
         this._cpf = cpf;
+        this._senha = senha;
     }
 
-     //acessor: somente saber o valor do cpf: seu número de cpf
-     get cpf(){
-        return this._cpf;
+    // cliente sempre vai ser autenticado
+    autenticar(){
+        return true;
     }
 }
